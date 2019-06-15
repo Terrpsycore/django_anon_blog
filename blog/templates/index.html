@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock title %}
+
+{% block content %}
+<ul>
+{% for post in posts %}
+    <li>{{ post.text }}</li>
+{% endfor %}
+</ul>
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Отправить">
+</form>
+{% endblock %}
